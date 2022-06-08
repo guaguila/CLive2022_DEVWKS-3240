@@ -16,7 +16,7 @@ Note: Use your pod number in the # symbol for the SSH command
 
 ```ssh -L 15152:10.1.1.3:3000 -L 15151:10.1.1.3:8480 auto@pod#-xelab```
 
-Password: programmability@LAB
+Password: ```programmability@LAB```
 
 Once you logged into the VM, you should be able to see fhe following prompt:
 ![](logged_vm.png)
@@ -28,9 +28,9 @@ From the VM prompt, enter the following commands to Telnet into the Catalyst 930
 
 auto@pod#-xelab:~$ telnet c9300
 
-user: admin
+user: ```admin```
 
-Password: Cisco123
+Password: ```Cisco123```
 
 
 # Configuring Telemetry Subscriptions on the Catalyst 9300
@@ -47,29 +47,29 @@ Password: Cisco123
 6-Copy&paste or enter the following commands, exactly as they appear on the Catalyst 9300:
 
 
-configure terminal
+```configure terminal```
 
-telemetry ietf subscription 1010
+```telemetry ietf subscription 1010```
 
- encoding encode-kvgpb
+``` encoding encode-kvgpb```
  
- filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds
+``` filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds```
  
- source-address 10.1.1.5
+``` source-address 10.1.1.5```
  
- stream yang-push
+``` stream yang-push```
  
- update-policy periodic 2000
+``` update-policy periodic 2000```
  
- receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+``` receiver ip address 10.1.1.3 57500 protocol grpc-tcp```
 
 
 
-telemetry ietf subscription 1020
+```telemetry ietf subscription 1020```
 
- encoding encode-kvgpb
+``` encoding encode-kvgpb```
  
- filter xpath /poe-ios-xe-oper:poe-oper-data
+``` filter xpath /poe-ios-xe-oper:poe-oper-data```
  
  source-address 10.1.1.5
  
