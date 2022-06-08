@@ -162,10 +162,11 @@ C9300(config)#gnxi secure-init
 C9300(config)#gnxi secure-server
 
 C9300(config)#gnxi secure-port 9339
+![](gnxi_config.png)
 
 After you entered these commands, you we will see the self-signed option on the switch 
 C9300#show gnxi state detail 
-
+![](gnxi_details.png)
 
 
 ## 2-Provision the certificates on the Virtual Machine
@@ -173,21 +174,24 @@ C9300#show gnxi state detail
 Copy and paste the following command exactly as it is on the Pod# VM
 
 ../../gnoi_cert -target_addr c9300:9339 -op provision -target_name c9300 -alsologtostderr -organization "jcohoe org" -ip_address 10.1.1.5 -time_out=10s -min_key_size=2048 -cert_id mdt_cert -state BC -country CA -ca ./rootCA.pem -key ./rootCA.key
-
+![](gnoi_cert_provision.png)
 This is going to install the certificate on the switch with the name that was specified (mdt_cert)
 
-Verify the switch log to see the cert name was created
 
-Check the gnxi state details to validate it changed. (show gnxi state detail )
+## Verify Certificates were provisioned and installed on the Catalyst 9300
+
+C9300#show log 
+
+Look for a log called: “PKI-6-TRUSTPOINT_CREATE”
+
+![](gnxi_log.png)
 
 
-## Add and verify the Security certificates on the Catalyst 9300. 
+Verify the certificates are in use now.
 
-* Provision the certificate on the VM 
+C9300#show gnxi state detail 
 
-* Configure the switch to use the certificates that were installed on the VM.
-
-* Verify the certificates are in use now.
+![](gnxi_configured.png)
 
 
 
