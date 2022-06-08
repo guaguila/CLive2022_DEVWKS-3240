@@ -129,6 +129,10 @@ Username: admin
 
 Password: Cisco123
 
+The CPU Utilization streaming telemetry data, the average and current memory consumption patterns, the temperature levels (max, min, avg) and power readings that were configured earlier are now visible in the pre-configured charts. 
+This shows the telemetry data that was configured earlier in this lab using Grafana for visualization of the data.
+
+
 
 # Enhanced security via certificates (gNOI) for Model-Driven Telemetry
 
