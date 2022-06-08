@@ -170,8 +170,6 @@ C9300#show gnxi state detail
 
 ## 2-Provision the certificates on the Virtual Machine
 
-Enter the gnmi_ssl 
-
 Copy and paste the following command exactly as it is on the Pod# VM
 
 ../../gnoi_cert -target_addr c9300:9339 -op provision -target_name c9300 -alsologtostderr -organization "jcohoe org" -ip_address 10.1.1.5 -time_out=10s -min_key_size=2048 -cert_id mdt_cert -state BC -country CA -ca ./rootCA.pem -key ./rootCA.key
