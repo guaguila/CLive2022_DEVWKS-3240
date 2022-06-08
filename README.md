@@ -62,29 +62,51 @@ telemetry ietf subscription 1010
  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
 
 
+
 telemetry ietf subscription 1020
+
  encoding encode-kvgpb
+ 
  filter xpath /poe-ios-xe-oper:poe-oper-data
+ 
  source-address 10.1.1.5
+ 
  stream yang-push
+ 
  update-policy periodic 2000
+ 
  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+ 
 
 
 telemetry ietf subscription 1030
+
  encoding encode-kvgpb
+ 
  filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
+ 
  source-address 10.1.1.5
+ 
  stream yang-push
+ 
  update-policy periodic 2000
+ 
  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+ 
 
 
 telemetry ietf subscription 1040
+
  encoding encode-kvgpb
+ 
  filter xpath /oc-platform:components/component/state/temperature
+ 
  source-address 10.1.1.5
+ 
  stream yang-push
+ 
  update-policy periodic 2000
+ 
  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+ 
 
