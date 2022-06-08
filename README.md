@@ -44,7 +44,8 @@ Password: Cisco123
 
 5-Include the receiver of the traffic, in this case it is the switch: 10.1.1.5. 
 
-Copy&paste or enter the following commands, exactly as they appear on the Catalyst 9300:
+6-Copy&paste or enter the following commands, exactly as they appear on the Catalyst 9300:
+
 
 configure terminal
 
