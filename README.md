@@ -14,7 +14,7 @@ Identify your pod# and log into your respective pod# using SSH:
 
 Note: Use your pod number in the # symbol for the SSH command
 
-ssh -L 15152:10.1.1.3:3000 -L 15151:10.1.1.3:8480 auto@pod#-xelab
+'''ssh -L 15152:10.1.1.3:3000 -L 15151:10.1.1.3:8480 auto@pod#-xelab
 
 Password: programmability@LAB
 
