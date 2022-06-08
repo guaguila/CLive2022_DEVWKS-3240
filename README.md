@@ -71,45 +71,45 @@ Password: ```Cisco123```
  
 ``` filter xpath /poe-ios-xe-oper:poe-oper-data```
  
- source-address 10.1.1.5
+``` source-address 10.1.1.5```
  
- stream yang-push
+``` stream yang-push```
  
- update-policy periodic 2000
+``` update-policy periodic 2000```
  
- receiver ip address 10.1.1.3 57500 protocol grpc-tcp
- 
-
-
-telemetry ietf subscription 1030
-
-  encoding encode-kvgpb
- 
-  filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
- 
-  source-address 10.1.1.5
- 
-  stream yang-push
- 
-  update-policy periodic 2000
- 
-  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+``` receiver ip address 10.1.1.3 57500 protocol grpc-tcp```
  
 
 
-telemetry ietf subscription 1040
+```telemetry ietf subscription 1030```
 
- encoding encode-kvgpb
+```  encoding encode-kvgpb```
  
- filter xpath /oc-platform:components/component/state/temperature
+```  filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic```
  
- source-address 10.1.1.5
+```  source-address 10.1.1.5```
  
- stream yang-push
+```  stream yang-push```
  
- update-policy periodic 2000
+```  update-policy periodic 2000```
  
- receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+```  receiver ip address 10.1.1.3 57500 protocol grpc-tcp```
+ 
+
+
+```telemetry ietf subscription 1040```
+
+``` encoding encode-kvgpb```
+ 
+``` filter xpath /oc-platform:components/component/state/temperature```
+ 
+``` source-address 10.1.1.5```
+ 
+``` stream yang-push```
+ 
+ ```update-policy periodic 2000```
+ 
+``` receiver ip address 10.1.1.3 57500 protocol grpc-tcp```
  ![](mdt_subscriptions.png)
  
  
@@ -123,11 +123,11 @@ Grafana connects with every possible data source or databases such as Graphite, 
 Grafana being an open source solution also enables us to write plugins from scratch for integration with several different data sources.
 
 ## Open the Grafana dashboard 
-Open http://localhost:15152/
+```Open http://localhost:15152/```
 
-Username: admin 
+Username: ```admin ```
 
-Password: Cisco123
+Password: ```Cisco123```
 
 ![](grafana_dashboard.png)
 
@@ -158,21 +158,21 @@ For the sake of brevity, we will just take care of the aspects of this configura
 
 ## 1-GNXI configuration on the Catalyst 9300
 
-C9300#conf t
+```C9300#conf t```
 
-Enter configuration commands, one per line.  End with CNTL/Z.
+```Enter configuration commands, one per line.  End with CNTL/Z.```
 
-C9300(config)#gnxi
+```C9300(config)#gnxi```
 
-C9300(config)#gnxi secure-init
+```C9300(config)#gnxi secure-init```
 
-C9300(config)#gnxi secure-server
+```C9300(config)#gnxi secure-server```
 
-C9300(config)#gnxi secure-port 9339
+```C9300(config)#gnxi secure-port 9339```
 ![](gnxi_config.png)
 
 After you entered these commands, you we will see the self-signed option on the switch 
-C9300#show gnxi state detail 
+```C9300#show gnxi state detail ```
 ![](gnxi_details.png)
 
 
@@ -180,14 +180,14 @@ C9300#show gnxi state detail
 
 Copy and paste the following command exactly as it is on the Pod# VM
 
-../../gnoi_cert -target_addr c9300:9339 -op provision -target_name c9300 -alsologtostderr -organization "jcohoe org" -ip_address 10.1.1.5 -time_out=10s -min_key_size=2048 -cert_id mdt_cert -state BC -country CA -ca ./rootCA.pem -key ./rootCA.key
+```../../gnoi_cert -target_addr c9300:9339 -op provision -target_name c9300 -alsologtostderr -organization "jcohoe org" -ip_address 10.1.1.5 -time_out=10s -min_key_size=2048 -cert_id mdt_cert -state BC -country CA -ca ./rootCA.pem -key ./rootCA.key```
 ![](gnoi_cert_provision.png)
 This is going to install the certificate on the switch with the name that was specified (mdt_cert)
 
 
 ## Verify Certificates were provisioned and installed on the Catalyst 9300
 
-C9300#show log 
+```C9300#show log ```
 
 Look for a log called: “PKI-6-TRUSTPOINT_CREATE”
 
@@ -196,10 +196,15 @@ Look for a log called: “PKI-6-TRUSTPOINT_CREATE”
 
 Verify the certificates are in use now.
 
-C9300#show gnxi state detail 
+```C9300#show gnxi state detail ```
 
 ![](gnxi_configured.png)
 
 
 
 
+# Summary
+On this lab
+
+
+# Follow up on MDT
