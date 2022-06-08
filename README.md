@@ -115,7 +115,7 @@ telemetry ietf subscription 1040
  
  
  # Increased Observability with IOS XE Telemetry displayed in Grafana
-![](grafana_dashboard.png)
+
 Grafana is an open source solution for running data analytics, pulling up metrics selective metrics out of the huge amount of data that we are monitoring daily from our devices and apps with the help of customizable dashboards.
 
 Grafana connects with every possible data source or databases such as Graphite, Prometheus, Influx DB, ElasticSearch, MySQL, PostgreSQL etc. In this case we will extract the information the subscriptions that were created on the switch. This data has been  sent from the switch to Influx DB. Now we will display that into Grafana dashboards.
@@ -129,7 +129,10 @@ Username: admin
 
 Password: Cisco123
 
+![](grafana_dashboard.png)
+
 The CPU Utilization streaming telemetry data, the average and current memory consumption patterns, the temperature levels (max, min, avg) and power readings that were configured earlier are now visible in the pre-configured charts. 
+
 This shows the telemetry data that was configured earlier in this lab using Grafana for visualization of the data.
 
 
