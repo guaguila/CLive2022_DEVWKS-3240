@@ -48,12 +48,19 @@ Copy&paste or enter the following commands, exactly as they appear on the Cataly
 configure terminal
 
 telemetry ietf subscription 1010
+
  encoding encode-kvgpb
+ 
  filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds
+ 
  source-address 10.1.1.5
+ 
  stream yang-push
+ 
  update-policy periodic 2000
+ 
  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+
 
 telemetry ietf subscription 1020
  encoding encode-kvgpb
@@ -63,6 +70,7 @@ telemetry ietf subscription 1020
  update-policy periodic 2000
  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
 
+
 telemetry ietf subscription 1030
  encoding encode-kvgpb
  filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
@@ -70,6 +78,7 @@ telemetry ietf subscription 1030
  stream yang-push
  update-policy periodic 2000
  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+
 
 telemetry ietf subscription 1040
  encoding encode-kvgpb
