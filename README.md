@@ -31,3 +31,51 @@ user: admin
 
 Password: Cisco123
 
+
+# Configuring Telemetry Subscriptions on the Catalyst 9300
+1-Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
+
+2-Configure the type of encoding, in our case is: ‘encode-kvgpb’
+
+3-YANG Push can be used to monitor configuration or operational datastore changes. We will use: ‘ stream yang-push’ 
+
+4-Periodicity. Specify how frequently you want to send the traffic (in milliseconds) and the receiver of the traffic.
+
+5-Include the receiver of the traffic, in this case it is the switch: 10.1.1.5. 
+
+Copy&paste or enter the following commands, exactly as they appear on the Catalyst 9300:
+
+configure terminal
+
+telemetry ietf subscription 1010
+ encoding encode-kvgpb
+ filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds
+ source-address 10.1.1.5
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+
+telemetry ietf subscription 1020
+ encoding encode-kvgpb
+ filter xpath /poe-ios-xe-oper:poe-oper-data
+ source-address 10.1.1.5
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+
+telemetry ietf subscription 1030
+ encoding encode-kvgpb
+ filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
+ source-address 10.1.1.5
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+
+telemetry ietf subscription 1040
+ encoding encode-kvgpb
+ filter xpath /oc-platform:components/component/state/temperature
+ source-address 10.1.1.5
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+
