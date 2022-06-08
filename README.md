@@ -21,3 +21,10 @@ Once you logged into the VM, you should be able to see fhe following prompt:
 ![](logged_vm.png)
 
 
+
+# Telnet into the Catalyst 9300
+From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use an IP address but an actual name. 
+auto@pod#-xelab:~$ telnet c9300
+user: admin
+Password: Cisco123
+
