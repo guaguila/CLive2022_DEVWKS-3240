@@ -108,7 +108,7 @@ telemetry ietf subscription 1040
  update-policy periodic 2000
  
  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
- 
+ ![](mdt_subscriptions.png)
  
  
  
