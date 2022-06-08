@@ -183,7 +183,7 @@ Verify the switch log to see the cert name was created
 Check the gnxi state details to validate it changed. (show gnxi state detail )
 
 
-## Add Security. 
+## Add and verify the Security certificates on the Catalyst 9300. 
 
 * Provision the certificate on the VM 
 
