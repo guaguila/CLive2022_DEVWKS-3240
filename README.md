@@ -81,17 +81,17 @@ telemetry ietf subscription 1020
 
 telemetry ietf subscription 1030
 
- encoding encode-kvgpb
+  encoding encode-kvgpb
  
- filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
+  filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
  
- source-address 10.1.1.5
+  source-address 10.1.1.5
  
- stream yang-push
+  stream yang-push
  
- update-policy periodic 2000
+  update-policy periodic 2000
  
- receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+  receiver ip address 10.1.1.3 57500 protocol grpc-tcp
  
 
 
