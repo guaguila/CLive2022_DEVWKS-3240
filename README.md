@@ -17,4 +17,7 @@ ssh -L 15152:10.1.1.3:3000 -L 15151:10.1.1.3:8480 auto@pod#-xelab
 
 Password: programmability@LAB
 
+Once you logged into the VM, you should be able to see fhe following prompt:
+![](logged_vm.png)
+
 
