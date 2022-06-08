@@ -5,4 +5,4 @@ This is the workshop guide
 
 
 ## Small header
-![](imgs/iosxelifecycle.png)
+![](cisco_switch.jpeg)
