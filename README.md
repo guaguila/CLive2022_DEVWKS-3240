@@ -48,9 +48,9 @@ From the VM prompt, enter the following commands to Telnet into the Catalyst 930
 
 ```auto@pod#-xelab:~$ telnet c9300```
 
-user: ```admin```
+```user: admin```
 
-Password: ```Cisco123```
+```Password: Cisco123```
 
 
 ## 1-GNXI configuration on the Catalyst 9300
