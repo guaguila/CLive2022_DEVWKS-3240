@@ -11,7 +11,7 @@ To access the lab, you will need to SSH to the VM specific host. From the VM hos
 # Accessing the lab environment 
 Identify your pod# and log into your respective pod# using SSH:
 
-Note: Use your pod number in place of the # symbol for the SSH command
+Note: Use your pod number instead of the # symbol for the SSH command
 
 ```$ ssh –p 3389 –L 18480:localhost:8480 –L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
