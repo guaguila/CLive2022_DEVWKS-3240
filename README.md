@@ -8,6 +8,69 @@ To access the lab, you will need to SSH to the VM specific host. From the VM hos
 # Lab environment
 ![](Clive3240_env.png)
 
+# Enhanced security via certificates (gNOI) for Model-Driven Telemetry
+
+## gNOI Certificate Management Client
+
+A simple shell binary that performs Certificate Management client operations against a gNOI Target.
+
+## Certificates
+
+Only the Root certificate and private key are required for this client. The client will:
+
+* generate a client certificate for establishing the connection to the Target
+
+* sign target signing requests for installing or rotating certificates on the Target
+
+The client certificates can also be provided to establish the connection to the target and will be used instead.
+
+For the sake of brevity, we will just take care of the aspects of this configuration: 1) the GNXI switch configuration and the certificate provision on the VM. 
+
+
+## 1-GNXI configuration on the Catalyst 9300
+
+```C9300#conf t```
+
+```Enter configuration commands, one per line.  End with CNTL/Z.```
+
+```C9300(config)#gnxi```
+
+```C9300(config)#gnxi secure-init```
+
+```C9300(config)#gnxi secure-server```
+
+```C9300(config)#gnxi secure-port 9339```
+![](gnxi_config.png)
+
+After you entered these commands, you we will see the self-signed option on the switch 
+```C9300#show gnxi state detail ```
+![](gnxi_details.png)
+
+
+## 2-Provision the certificates on the Virtual Machine
+
+Copy and paste the following command exactly as it is on the Pod# VM
+
+```../../gnoi_cert -target_addr c9300:9339 -op provision -target_name c9300 -alsologtostderr -organization "jcohoe org" -ip_address 10.1.1.5 -time_out=10s -min_key_size=2048 -cert_id mdt_cert -state BC -country CA -ca ./rootCA.pem -key ./rootCA.key```
+![](gnoi_cert_provision.png)
+This is going to install the certificate on the switch with the name that was specified (mdt_cert)
+
+
+## Verify Certificates were provisioned and installed on the Catalyst 9300
+
+```C9300#show log ```
+
+Look for a log called: “PKI-6-TRUSTPOINT_CREATE”
+
+![](gnxi_log.png)
+
+
+Verify the certificates are in use now.
+
+```C9300#show gnxi state detail ```
+
+![](gnxi_configured.png)
+
 
 # Accessing the lab environment 
 Identify your pod# and log into your respective pod# using SSH:
@@ -139,68 +202,6 @@ This shows the telemetry data that was configured earlier in this lab using Graf
 
 
 
-# Enhanced security via certificates (gNOI) for Model-Driven Telemetry
-
-## gNOI Certificate Management Client
-
-A simple shell binary that performs Certificate Management client operations against a gNOI Target.
-
-## Certificates
-
-Only the Root certificate and private key are required for this client. The client will:
-
-* generate a client certificate for establishing the connection to the Target
-
-* sign target signing requests for installing or rotating certificates on the Target
-
-The client certificates can also be provided to establish the connection to the target and will be used instead.
-
-For the sake of brevity, we will just take care of the aspects of this configuration: 1) the GNXI switch configuration and the certificate provision on the VM. 
-
-
-## 1-GNXI configuration on the Catalyst 9300
-
-```C9300#conf t```
-
-```Enter configuration commands, one per line.  End with CNTL/Z.```
-
-```C9300(config)#gnxi```
-
-```C9300(config)#gnxi secure-init```
-
-```C9300(config)#gnxi secure-server```
-
-```C9300(config)#gnxi secure-port 9339```
-![](gnxi_config.png)
-
-After you entered these commands, you we will see the self-signed option on the switch 
-```C9300#show gnxi state detail ```
-![](gnxi_details.png)
-
-
-## 2-Provision the certificates on the Virtual Machine
-
-Copy and paste the following command exactly as it is on the Pod# VM
-
-```../../gnoi_cert -target_addr c9300:9339 -op provision -target_name c9300 -alsologtostderr -organization "jcohoe org" -ip_address 10.1.1.5 -time_out=10s -min_key_size=2048 -cert_id mdt_cert -state BC -country CA -ca ./rootCA.pem -key ./rootCA.key```
-![](gnoi_cert_provision.png)
-This is going to install the certificate on the switch with the name that was specified (mdt_cert)
-
-
-## Verify Certificates were provisioned and installed on the Catalyst 9300
-
-```C9300#show log ```
-
-Look for a log called: “PKI-6-TRUSTPOINT_CREATE”
-
-![](gnxi_log.png)
-
-
-Verify the certificates are in use now.
-
-```C9300#show gnxi state detail ```
-
-![](gnxi_configured.png)
 
 
 
