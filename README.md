@@ -20,8 +20,6 @@ The first time you login, you'll see this question: `Are you sure you want to co
 
 ![](first_time_login.png)
 
-Password: ```programmability@LAB```
-
 Once you logged into the VM, you should be able to see fhe following prompt:
 ![](logged_vm.png)
 
