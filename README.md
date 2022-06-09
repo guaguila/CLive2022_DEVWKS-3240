@@ -131,69 +131,70 @@ Password: ```Cisco123```
 6-Copy&paste or enter the following commands, exactly as they appear on the Catalyst 9300:
 
 
-```configure terminal```
+```configure terminal
 
-```telemetry ietf subscription 1010```
+telemetry ietf subscription 1010
 
-``` encoding encode-kvgpb```
+encoding encode-kvgpb
  
-``` filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds```
+filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds
  
-``` source-address 10.1.1.5```
+source-address 10.1.1.5
  
-``` stream yang-push```
+stream yang-push
  
-``` update-policy periodic 2000```
+update-policy periodic 2000
  
-``` receiver ip address 10.1.1.3 57500 protocol grpc-tcp```
-
-
-
-```telemetry ietf subscription 1020```
-
-``` encoding encode-kvgpb```
- 
-``` filter xpath /poe-ios-xe-oper:poe-oper-data```
- 
-``` source-address 10.1.1.5```
- 
-``` stream yang-push```
- 
-``` update-policy periodic 2000```
- 
-``` receiver ip address 10.1.1.3 57500 protocol grpc-tcp```
- 
+receiver ip address 10.1.1.3 57500 protocol grpc-tcp
 
 
-```telemetry ietf subscription 1030```
 
-```  encoding encode-kvgpb```
+telemetry ietf subscription 1020
+
+encoding encode-kvgpb
  
-```  filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic```
+filter xpath /poe-ios-xe-oper:poe-oper-data
  
-```  source-address 10.1.1.5```
+source-address 10.1.1.5
  
-```  stream yang-push```
+stream yang-push
  
-```  update-policy periodic 2000```
+update-policy periodic 2000
  
-```  receiver ip address 10.1.1.3 57500 protocol grpc-tcp```
+receiver ip address 10.1.1.3 57500 protocol grpc-tcp
  
 
 
-```telemetry ietf subscription 1040```
+telemetry ietf subscription 1030
 
-``` encoding encode-kvgpb```
+encoding encode-kvgpb
  
-``` filter xpath /oc-platform:components/component/state/temperature```
+filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
  
-``` source-address 10.1.1.5```
+source-address 10.1.1.5
  
-``` stream yang-push```
+stream yang-push
  
- ```update-policy periodic 2000```
+update-policy periodic 2000
  
-``` receiver ip address 10.1.1.3 57500 protocol grpc-tcp```
+receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+ 
+
+
+telemetry ietf subscription 1040
+
+encoding encode-kvgpb
+ 
+filter xpath /oc-platform:components/component/state/temperature
+ 
+source-address 10.1.1.5
+ 
+stream yang-push
+ 
+ update-policy periodic 2000
+ 
+receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+```
  ![](mdt_subscriptions.png)
  
  
@@ -209,9 +210,11 @@ Grafana being an open source solution also enables us to write plugins from scra
 ## Open the Grafana dashboard 
 ```Open http://localhost:13000/```
 
-Username: ```admin ```
+```
+Username: admin
 
-Password: ```Cisco123```
+Password: Cisco123
+```
 
 ![](grafana_dashboard.png)
 
