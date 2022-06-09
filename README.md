@@ -203,7 +203,7 @@ Grafana connects with every possible data source or databases such as Graphite, 
 Grafana being an open source solution also enables us to write plugins from scratch for integration with several different data sources.
 
 ## Open the Grafana dashboard 
-```Open http://localhost:15152/```
+```Open http://localhost:13000/```
 
 Username: ```admin ```
 
