@@ -228,3 +228,5 @@ Cisco IOS XE is fully managed via YANG data models and the Model Driven Telemetr
 
 
 ## Follow up on MDT
+
+https://app.smartsheet.com/b/form/134240eac2d84a57acd4efc24fd8f3d0
