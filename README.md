@@ -106,7 +106,7 @@ Verify the certificates are in use now.
 
 
 # Telnet back into the Catalyst 9300
-auto@pod#-xelab:~$ telnet c9300
+```auto@pod#-xelab:~$ telnet c9300```
 
 user: ```admin```
 
