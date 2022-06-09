@@ -6,7 +6,7 @@ To access the lab, you will need to SSH to the VM specific host. From the VM hos
 
 
 # Lab environment
-![](Clive3240_env.png)
+![](lab_env.png)
 
 # Accessing the lab environment 
 Identify your pod# and log into your respective pod# using SSH:
