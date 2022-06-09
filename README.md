@@ -43,7 +43,7 @@ The client certificates can also be provided to establish the connection to the 
 For the sake of brevity, we will just take care of the aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
 
 
-# Telnet into the Catalyst 9300
+## Telnet into the Catalyst 9300
 From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use an IP address but an actual name. 
 
 ```auto@pod#-xelab:~$ telnet c9300```
