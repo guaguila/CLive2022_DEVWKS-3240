@@ -68,6 +68,7 @@ From the VM prompt, enter the following commands to Telnet into the Catalyst 930
 ![](gnxi_config.png)
 
 After you entered these commands, you we will see the self-signed option on the switch 
+
 ```C9300#show gnxi state detail ```
 ![](gnxi_details.png)
 
