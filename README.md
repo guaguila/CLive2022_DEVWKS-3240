@@ -8,11 +8,27 @@ To access the lab, you will need to SSH to the VM specific host. From the VM hos
 # Lab environment
 ![](Clive3240_env.png)
 
+# Accessing the lab environment 
+Identify your pod# and log into your respective pod# using SSH:
+
+Note: Use your pod number in place of the # symbol for the SSH command
+
+```$ ssh –p 3389 –L 18480:localhost:8480 –L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
+
+The first time you login, you'll see this question: `Are you sure you want to continue connecting (yes/no/[fingerprint])?` Type, `yes` to continue 
+
+![](first_time_login.png)
+
+Once you logged into the VM, you should be able to see the following prompt:
+![](logged_vm.png)
+
+
+
 # Enhanced security via certificates (gNOI) for Model-Driven Telemetry
 
 ## gNOI Certificate Management Client
 
-A simple shell binary that performs Certificate Management client operations against a gNOI Target.
+We are going to shield the switch to VM communication using certificates. A simple shell binary that performs Certificate Management client operations against a gNOI Target complete the operation.
 
 ## Certificates
 
@@ -25,6 +41,16 @@ Only the Root certificate and private key are required for this client. The clie
 The client certificates can also be provided to establish the connection to the target and will be used instead.
 
 For the sake of brevity, we will just take care of the aspects of this configuration: 1) the GNXI switch configuration and the certificate provision on the VM. 
+
+
+# Telnet into the Catalyst 9300
+From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use an IP address but an actual name. 
+
+auto@pod#-xelab:~$ telnet c9300
+
+user: ```admin```
+
+Password: ```Cisco123```
 
 
 ## 1-GNXI configuration on the Catalyst 9300
@@ -47,6 +73,9 @@ After you entered these commands, you we will see the self-signed option on the 
 
 
 ## 2-Provision the certificates on the Virtual Machine
+
+Go into directory:
+
 
 Copy and paste the following command exactly as it is on the Pod# VM
 
@@ -71,25 +100,9 @@ Verify the certificates are in use now.
 ![](gnxi_configured.png)
 
 
-# Accessing the lab environment 
-Identify your pod# and log into your respective pod# using SSH:
-
-Note: Use your pod number in place of the # symbol for the SSH command
-
-```ssh -L 15152:10.1.1.3:3000 -L 15151:10.1.1.3:8480 auto@pod##-xelab```
-
-The first time you login, you'll see this question: `Are you sure you want to continue connecting (yes/no/[fingerprint])?` Type, `yes` to continue 
-
-![](first_time_login.png)
-
-Once you logged into the VM, you should be able to see fhe following prompt:
-![](logged_vm.png)
 
 
-
-# Telnet into the Catalyst 9300
-From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use an IP address but an actual name. 
-
+# Telnet back into the Catalyst 9300
 auto@pod#-xelab:~$ telnet c9300
 
 user: ```admin```
