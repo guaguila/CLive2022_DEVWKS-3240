@@ -39,7 +39,6 @@ For the sake of brevity, we will just take care of the aspects of this configura
 
 ```C9300(config)#gnxi secure-server```
 
-```C9300(config)#gnxi secure-port 9339```
 ![](gnxi_config.png)
 
 After you entered these commands, you we will see the self-signed option on the switch 
