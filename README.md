@@ -46,11 +46,13 @@ For the sake of brevity, we will just take care of the aspects of this configura
 ## Telnet into the Catalyst 9300
 From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use an IP address but an actual name. 
 
-```auto@pod#-xelab:~$ telnet c9300```
+```
+auto@pod#-xelab:~$ telnet c9300
 
-```user: admin```
+user: admin
 
-```Password: Cisco123```
+Password: Cisco123
+```
 
 
 ## 1-GNXI configuration on the Catalyst 9300
