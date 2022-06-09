@@ -143,7 +143,7 @@ source-address 10.1.1.5
  
 stream yang-push
  
-update-policy periodic 2000
+update-policy periodic 6000
  
 receiver ip address 10.1.1.3 57500 protocol grpc-tcp
 
@@ -159,7 +159,7 @@ source-address 10.1.1.5
  
 stream yang-push
  
-update-policy periodic 2000
+update-policy periodic 6000
  
 receiver ip address 10.1.1.3 57500 protocol grpc-tcp
  
@@ -175,7 +175,7 @@ source-address 10.1.1.5
  
 stream yang-push
  
-update-policy periodic 2000
+update-policy periodic 6000
  
 receiver ip address 10.1.1.3 57500 protocol grpc-tcp
  
@@ -191,7 +191,7 @@ source-address 10.1.1.5
  
 stream yang-push
  
- update-policy periodic 2000
+ update-policy periodic 6000
  
 receiver ip address 10.1.1.3 57500 protocol grpc-tcp
 ```
