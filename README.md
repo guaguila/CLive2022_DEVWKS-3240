@@ -12,9 +12,13 @@ To access the lab, you will need to SSH to the VM specific host. From the VM hos
 # Accessing the lab environment 
 Identify your pod# and log into your respective pod# using SSH:
 
-Note: Use your pod number in the # symbol for the SSH command
+Note: Use your pod number in place of the # symbol for the SSH command
 
-```ssh -L 15152:10.1.1.3:3000 -L 15151:10.1.1.3:8480 auto@pod#-xelab```
+```ssh -L 15152:10.1.1.3:3000 -L 15151:10.1.1.3:8480 auto@pod##-xelab```
+
+The first time you login, you'll see this question: `Are you sure you want to continue connecting (yes/no/[fingerprint])?` Type, `yes` to continue 
+
+![](first_time_login.png)
 
 Password: ```programmability@LAB```
 
