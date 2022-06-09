@@ -57,21 +57,23 @@ Password: Cisco123
 
 ## 1-GNXI configuration on the Catalyst 9300
 
-```C9300#conf t```
+```
+C9300#conf t
 
-```Enter configuration commands, one per line.  End with CNTL/Z.```
+Enter configuration commands, one per line.  End with CNTL/Z.
 
-```C9300(config)#gnxi```
+C9300(config)#gnxi
 
-```C9300(config)#gnxi secure-init```
+C9300(config)#gnxi secure-init
 
-```C9300(config)#gnxi secure-server```
+C9300(config)#gnxi secure-server
 
 ![](gnxi_config.png)
 
 After you entered these commands, you we will see the self-signed option on the switch 
 
-```C9300#show gnxi state detail ```
+C9300#show gnxi state detail
+```
 
 ![](gnxi_details.png)
 
