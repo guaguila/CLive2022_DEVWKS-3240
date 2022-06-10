@@ -17,7 +17,7 @@ Note: Use your pod number instead of the # symbol for the SSH command
 
 The first time you login, you'll see this question: `Are you sure you want to continue connecting (yes/no/[fingerprint])?` Type, `yes` to continue 
 
-![](first_time_login.png)
+![](first_time_login2.png)
 
 Once you logged into the VM, you should be able to see the following prompt:
 ![](logged_vm.png)
