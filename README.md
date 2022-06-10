@@ -107,7 +107,7 @@ Verify the certificates are in use now.
 
 ```C9300#show gnxi state detail ```
 
-![](gnxi_configured.png)
+![](gnxi_configured_arrow.png)
 
 
 
