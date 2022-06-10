@@ -13,7 +13,7 @@ Identify your pod# and log into your respective pod# using SSH:
 
 Note: Use your pod number instead of the # symbol for the SSH command
 
-```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod08-xelab.cisco.com```
+```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
 Password: Use the password given to you by the facilitator
 
