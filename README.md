@@ -70,6 +70,8 @@ C9300(config)#gnxi secure-init
 
 C9300(config)#gnxi secure-server
 
+C9300(config)#exit
+
 After you entered these commands, you we will see the self-signed option on the switch 
 
 C9300#show gnxi state detail
