@@ -89,7 +89,8 @@ Go into directory:
 Copy and paste the following command exactly as it is. Make sure you are on the correct directory before.
 
 ```../../gnoi_cert -target_addr c9300:9339 -op provision -target_name c9300 -alsologtostderr -organization "jcohoe org" -ip_address 10.1.1.5 -time_out=10s -min_key_size=2048 -cert_id mdt_cert -state BC -country CA -ca ./rootCA.pem -key ./rootCA.key```
-![](gnoi_cert_provision.png)
+![](gnms_ssl_certs.jpg)
+
 This is going to install the certificate on the switch with the name that was specified (mdt_cert)
 
 
