@@ -15,6 +15,8 @@ Note: Use your pod number instead of the # symbol for the SSH command
 
 ```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod08-xelab.cisco.com```
 
+Password: Use the password given to you by the facilitator
+
 Once you logged into the VM, the first time you login, you'll see this question: `Are you sure you want to continue connecting (yes/no/[fingerprint])?` Type, `yes` to continue 
 
 After you approve the entry you should be able to see the following prompt:
