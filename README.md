@@ -59,6 +59,16 @@ Password: Cisco123
 
 ## 1-GNXI configuration on the Catalyst 9300
 
+Type or copy/paste the following CLI commands into the switch:
+```
+conf t
+gnxi
+gnxi secure-init
+gnxi secure-server
+exit
+show gnxi state detail
+```
+
 ```
 C9300#conf t
 
