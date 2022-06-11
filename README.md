@@ -87,6 +87,9 @@ After you entered these commands, you we will see the self-signed option on the 
 C9300#show gnxi state detail
 ```
 
+The output will look similar to the below screenshot:
+
+
 ![](gnxi_details.png)
 
 
