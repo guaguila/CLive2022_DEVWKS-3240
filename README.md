@@ -139,17 +139,10 @@ Verify the certificates are in use now.
 ![](gnxi_configured_arrow.png)
 
 
-
-
-# Telnet back into the Catalyst 9300
-```auto@pod#-xelab:~$ telnet c9300```
-
-user: ```admin```
-
-Password: ```Cisco123```
-
-
 # Configuring Telemetry Subscriptions on the Catalyst 9300
+
+The next step is to configure the telemetry subscriptions. This consists of several configuration items:
+
 1-Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
 2-Configure the type of encoding, in our case is: ‘encode-kvgpb’
@@ -160,7 +153,7 @@ Password: ```Cisco123```
 
 5-Include the receiver of the traffic, in this case it is the switch: 10.1.1.5. 
 
-6-Copy&paste or enter the following commands, exactly as they appear on the Catalyst 9300:
+6-Copy-paste or enter the following commands, exactly as they appear on the Catalyst 9300:
 
 ```
 configure terminal
@@ -208,7 +201,7 @@ Grafana connects with every possible data source or databases such as Graphite, 
 
 Grafana being an open source solution also enables us to write plugins from scratch for integration with several different data sources.
 
-## Open the Grafana dashboard 
+## Open the Grafana dashboard in Firefox 
 ```Open http://localhost:13000/```
 
 ```
@@ -217,16 +210,11 @@ Username: admin
 Password: Cisco123
 ```
 
-![](grafana_dashboard.png)
+![](grafana_browser.png)
 
 The CPU Utilization streaming telemetry data, the average and current memory consumption patterns, the temperature levels (max, min, avg) and power readings that were configured earlier are now visible in the pre-configured charts. 
 
 This shows the telemetry data that was configured earlier in this lab using Grafana for visualization of the data.
-
-
-
-
-
 
 
 # Summary
