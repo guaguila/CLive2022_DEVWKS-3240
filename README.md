@@ -126,16 +126,6 @@ Verify the certificates are in use now.
 ```C9300#show gnxi state detail ```
 
 
-
-
-# Telnet back into the Catalyst 9300
-`auto@pod#-xelab:~$ telnet c9300`
-
-Username: ```admin```
-
-Password: ```Cisco123```
-
-
 # Configuring Telemetry Subscriptions on the Catalyst 9300
 1. Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
