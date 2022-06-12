@@ -15,6 +15,8 @@ Note: Use your pod number instead of the ## symbol for the SSH command
 
 Copy/Paste the below line into the terminal. We recommend to open two terminal windows and login to both at the same time. One will be used for the VM while the other is dedicated for use on the C9300 switch.
 
+![](vm_c9300_terminals.png)
+
 ```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
 Password: Use the password given to you by the facilitator
