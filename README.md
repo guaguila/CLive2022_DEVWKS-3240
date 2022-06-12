@@ -52,21 +52,22 @@ For the sake of brevity, we will just take care of the aspects of this configura
 ## Telnet into the Catalyst 9300
 From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use an IP address but an actual name. 
 
-```
-auto@pod08-xelab:~$ telnet c9300
-
-user: admin
-
-Password: Cisco123
-```
-
 The console will look similar to the screenshot once the above and below 
 
 ![](telnet-gnmi-show.png)
 
+`telnet c9300`
+
+Then login with credentials admin / Cisco123
+
 
 
 ## 1-GNXI configuration on the Catalyst 9300
+
+The output will look similar to the below screenshot:
+
+
+![](gnxi_details.png)
 
 Type or copy/paste the following CLI commands into the switch:
 ```
@@ -78,28 +79,8 @@ exit
 show gnxi state detail
 ```
 
-```
-C9300-pod8#conf t
-
-Enter configuration commands, one per line.  End with CNTL/Z.
-
-C9300-pod8(config)#gnxi
-
-C9300-pod8(config)#gnxi secure-init
-
-C9300-pod8(config)#gnxi secure-server
-
-C9300-pod8(config)#exit
-
-After you entered these commands, you we will see the self-signed option on the switch 
-
-C9300#show gnxi state detail
-```
-
-The output will look similar to the below screenshot:
 
 
-![](gnxi_details.png)
 
 You have now configured gNMI and verified that it is operational. Turn on the terminal monitor now so that events that happen next can be seen in real time on the C9300 terminal window. Enter the command to enable the terminal monitor: ***term mon***
 
@@ -125,44 +106,46 @@ This is going to install the certificate on the switch with the name "mdt_cert" 
 
 ## Verify Certificates were provisioned and installed on the Catalyst 9300
 
-One way to confirm the certifites installation is to examine the log file by running *** show log*** however since the terminal monitor is already enabled the relevatn log messages are already dispalyed on the screen.
+One way to confirm the certifites installation is to examine the log file by running ***show log*** however since the terminal monitor is already enabled the relevatn log messages are already dispalyed on the screen.
+
+![](gnxi_log.png)
 
 ```C9300#show log | i PKI```
 
 When gNOI cert.proto install operation is succesfull there will be a log message similar to “PKI-6-TRUSTPOINT_CREATE” which is seen on the C9300 terminal window.
 
-![](gnxi_log.png)
-
 
 Verify the certificates are in use now.
 
-```C9300#show gnxi state detail ```
-
 ![](gnxi_configured_arrow.png)
+
+```C9300#show gnxi state detail ```
 
 
 
 
 # Telnet back into the Catalyst 9300
-```auto@pod#-xelab:~$ telnet c9300```
+`auto@pod#-xelab:~$ telnet c9300`
 
-user: ```admin```
+Username: ```admin```
 
 Password: ```Cisco123```
 
 
 # Configuring Telemetry Subscriptions on the Catalyst 9300
-1-Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
+1. Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
-2-Configure the type of encoding, in our case is: ‘encode-kvgpb’
+1. Configure the type of encoding, in our case is: ‘encode-kvgpb’
 
-3-YANG Push can be used to monitor configuration or operational datastore changes. We will use: ‘ stream yang-push’ 
+1. YANG Push can be used to monitor configuration or operational datastore changes. We will use: ‘ stream yang-push’ 
 
-4-Periodicity. Specify how frequently you want to send the traffic (in milliseconds) and the receiver of the traffic.
+1. Periodicity. Specify how frequently you want to send the traffic (in milliseconds) and the receiver of the traffic.
 
-5-Include the receiver of the traffic, in this case it is the switch: 10.1.1.5. 
+1. Include the receiver of the traffic, in this case it is the switch: 10.1.1.5. 
+![](mdt_subscriptions.png)
 
-6-Copy&paste or enter the following commands, exactly as they appear on the Catalyst 9300:
+1. Copy & paste or enter the following commands, exactly as they appear on the Catalyst 9300:
+
 
 ```
 configure terminal
@@ -198,7 +181,7 @@ stream yang-push
 update-policy periodic 6000
 receiver ip address 10.1.1.3 57500 protocol grpc-tcp
 ```
- ![](mdt_subscriptions.png)
+
  
  
  
@@ -213,22 +196,15 @@ Grafana being an open source solution also enables us to write plugins from scra
 ## Open the Grafana dashboard 
 ```Open http://localhost:13000/```
 
-```
 Username: admin
 
 Password: Cisco123
-```
 
 ![](grafana_dashboard.png)
 
 The CPU Utilization streaming telemetry data, the average and current memory consumption patterns, the temperature levels (max, min, avg) and power readings that were configured earlier are now visible in the pre-configured charts. 
 
 This shows the telemetry data that was configured earlier in this lab using Grafana for visualization of the data.
-
-
-
-
-
 
 
 # Summary
