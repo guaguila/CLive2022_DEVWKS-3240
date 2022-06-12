@@ -127,6 +127,10 @@ Verify the certificates are in use now.
 
 
 # Configuring Telemetry Subscriptions on the Catalyst 9300
+
+The next step is to configure the telemetry subscriptions. This consists of several configuration items:
+
+# Configuring Telemetry Subscriptions on the Catalyst 9300
 1. Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
 1. Configure the type of encoding, in our case is: ‘encode-kvgpb’
@@ -194,7 +198,7 @@ Username: admin
 
 Password: Cisco123
 
-![](grafana_dashboard.png)
+![](grafana_browser.png)
 
 The CPU Utilization streaming telemetry data, the average and current memory consumption patterns, the temperature levels (max, min, avg) and power readings that were configured earlier are now visible in the pre-configured charts. 
 
@@ -213,3 +217,5 @@ Please be sure to complete the sessio survey in the Cisco Events App
 Additional feedback is also being collected in the SmartSheet form during and after the event - please lease a comment on this lab at
 
 https://app.smartsheet.com/b/form/134240eac2d84a57acd4efc24fd8f3d0
+
+Thank you!
