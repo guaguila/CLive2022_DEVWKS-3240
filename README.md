@@ -23,7 +23,7 @@ Once you logged into the VM, the first time you login, you'll see this question:
 
 After you approve the entry you should be able to see the following prompt:
 
-![](first_time_login2.png)
+![](pod_login.png)
 
 
 
