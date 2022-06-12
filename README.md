@@ -99,13 +99,13 @@ The output will look similar to the below screenshot:
 
 ![](gnxi_details.png)
 
-You have now configured gNMI and verified that it is operational.
+You have now configured gNMI and verified that it is operational. Turn on the terminal monitor now so that events that happen next can be seen in real time on the C9300 terminal window. Enter the command to enable the terminal monitor: ***term mon***
 
 Next you will switch to the Linux VM terminal to install the certificates onto the C9300 from the VM.
 
 ## 2-Provision the certificates on the Virtual Machine
 
-Use the 2nd terminal window to perform the folowing tasks:
+Use the 2nd terminal window to perform the folowing tasks in the linux terminal
 
 Go into directory ***/home/auto/gnmi_ssl/certs*** then run the gnoi_cert command to install the certificate
 
@@ -123,9 +123,11 @@ This is going to install the certificate on the switch with the name "mdt_cert" 
 
 ## Verify Certificates were provisioned and installed on the Catalyst 9300
 
-```C9300#show log ```
+One way to confirm the certifites installation is to examine the log file by running *** show log*** however since the terminal monitor is already enabled the relevatn log messages are already dispalyed on the screen.
 
-Look for a log called: “PKI-6-TRUSTPOINT_CREATE”
+```C9300#show log | i PKI```
+
+When gNOI cert.proto install operation is succesfull there will be a log message similar to “PKI-6-TRUSTPOINT_CREATE” which is seen on the C9300 terminal window.
 
 ![](gnxi_log.png)
 
