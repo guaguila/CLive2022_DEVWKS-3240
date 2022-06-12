@@ -13,7 +13,7 @@ Identify your pod# and log into your respective pod# using SSH once opening the 
 
 Note: Use your pod number instead of the ## symbol for the SSH command
 
-Copy/Paste the below line into the terminal:
+Copy/Paste the below line into the terminal. We recommend to open two terminal windows and login to both at the same time. One will be used for the VM while the other is dedicated for use on the C9300 switch.
 
 ```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
@@ -51,12 +51,17 @@ For the sake of brevity, we will just take care of the aspects of this configura
 From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use an IP address but an actual name. 
 
 ```
-auto@pod#-xelab:~$ telnet c9300
+auto@pod08-xelab:~$ telnet c9300
 
 user: admin
 
 Password: Cisco123
 ```
+
+The console will look similar to the screenshot once the above and below 
+
+![](telnet-gnmi-show.png)
+
 
 
 ## 1-GNXI configuration on the Catalyst 9300
@@ -72,17 +77,17 @@ show gnxi state detail
 ```
 
 ```
-C9300#conf t
+C9300-pod8#conf t
 
 Enter configuration commands, one per line.  End with CNTL/Z.
 
-C9300(config)#gnxi
+C9300-pod8(config)#gnxi
 
-C9300(config)#gnxi secure-init
+C9300-pod8(config)#gnxi secure-init
 
-C9300(config)#gnxi secure-server
+C9300-pod8(config)#gnxi secure-server
 
-C9300(config)#exit
+C9300-pod8(config)#exit
 
 After you entered these commands, you we will see the self-signed option on the switch 
 
@@ -94,8 +99,13 @@ The output will look similar to the below screenshot:
 
 ![](gnxi_details.png)
 
+You have now configured gNMI and verified that it is operational.
+
+Next you will switch to the Linux VM terminal to install the certificates onto the C9300 from the VM.
 
 ## 2-Provision the certificates on the Virtual Machine
+
+Use the 2nd terminal window to perform the folowing tasks:
 
 Go into directory ***/home/auto/gnmi_ssl/certs*** then run the gnoi_cert command to install the certificate
 
@@ -108,7 +118,7 @@ cd gnmi_ssl/certs/
 
 ![](cert_dir.png)
 
-This is going to install the certificate on the switch with the name that was specified (mdt_cert)
+This is going to install the certificate on the switch with the name "mdt_cert" that was specified (certificate for model driven telemetry)
 
 
 ## Verify Certificates were provisioned and installed on the Catalyst 9300
