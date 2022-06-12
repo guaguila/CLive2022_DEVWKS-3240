@@ -23,7 +23,9 @@ Password: Use the password given to you by the facilitator
 
 Once you logged into the VM, the first time you login, you'll see this question:
 
-`Are you sure you want to continue connecting (yes/no/[fingerprint])?` Type, `yes` to continue 
+`Are you sure you want to continue connecting (yes/no/[fingerprint])?` 
+
+Type, `yes` to continue 
 
 After you approve the entry you should be able to see the following prompt:
 
