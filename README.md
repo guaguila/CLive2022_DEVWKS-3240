@@ -110,7 +110,7 @@ This is going to install the certificate on the switch with the name "mdt_cert" 
 
 ## Verify Certificates were provisioned and installed on the Catalyst 9300
 
-One way to confirm the certifites installation is to examine the log file by running ***show log*** however since the terminal monitor is already enabled the relevatn log messages are already dispalyed on the screen.
+One way to confirm the certificates installation is to examine the log file by running ***show log*** however since the terminal monitor is already enabled the relevant log messages are already displayed on the screen.
 
 ![](gnxi_log.png)
 
