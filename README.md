@@ -15,11 +15,17 @@ Note: Use your pod number instead of the ## symbol for the SSH command
 
 Copy/Paste the below line into the terminal. We recommend to open two terminal windows and login to both at the same time. One will be used for the VM while the other is dedicated for use on the C9300 switch.
 
+![](vm_c9300_terminals.png)
+
 ```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
 Password: Use the password given to you by the facilitator
 
-Once you logged into the VM, the first time you login, you'll see this question: `Are you sure you want to continue connecting (yes/no/[fingerprint])?` Type, `yes` to continue 
+Once you logged into the VM, the first time you login, you'll see this question:
+
+`Are you sure you want to continue connecting (yes/no/[fingerprint])?` 
+
+Type, `yes` to continue 
 
 After you approve the entry you should be able to see the following prompt:
 
@@ -50,21 +56,22 @@ For the sake of brevity, we will just take care of the aspects of this configura
 ## Telnet into the Catalyst 9300
 From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use an IP address but an actual name. 
 
-```
-auto@pod08-xelab:~$ telnet c9300
-
-user: admin
-
-Password: Cisco123
-```
-
 The console will look similar to the screenshot once the above and below 
 
 ![](telnet-gnmi-show.png)
 
+`telnet c9300`
+
+Then login with credentials admin / Cisco123
+
 
 
 ## 1-GNXI configuration on the Catalyst 9300
+
+The output will look similar to the below screenshot:
+
+
+![](gnxi_details.png)
 
 Type or copy/paste the following CLI commands into the switch:
 ```
@@ -76,28 +83,8 @@ exit
 show gnxi state detail
 ```
 
-```
-C9300-pod8#conf t
-
-Enter configuration commands, one per line.  End with CNTL/Z.
-
-C9300-pod8(config)#gnxi
-
-C9300-pod8(config)#gnxi secure-init
-
-C9300-pod8(config)#gnxi secure-server
-
-C9300-pod8(config)#exit
-
-After you entered these commands, you we will see the self-signed option on the switch 
-
-C9300#show gnxi state detail
-```
-
-The output will look similar to the below screenshot:
 
 
-![](gnxi_details.png)
 
 You have now configured gNMI and verified that it is operational. Turn on the terminal monitor now so that events that happen next can be seen in real time on the C9300 terminal window. Enter the command to enable the terminal monitor: ***term mon***
 
@@ -123,37 +110,56 @@ This is going to install the certificate on the switch with the name "mdt_cert" 
 
 ## Verify Certificates were provisioned and installed on the Catalyst 9300
 
-One way to confirm the certifites installation is to examine the log file by running *** show log*** however since the terminal monitor is already enabled the relevatn log messages are already dispalyed on the screen.
+One way to confirm the certificates installation is to examine the log file by running ***show log*** however since the terminal monitor is already enabled the relevant log messages are already displayed on the screen.
+
+![](gnxi_log.png)
 
 ```C9300#show log | i PKI```
 
 When gNOI cert.proto install operation is succesfull there will be a log message similar to “PKI-6-TRUSTPOINT_CREATE” which is seen on the C9300 terminal window.
 
-![](gnxi_log.png)
-
 
 Verify the certificates are in use now.
 
-```C9300#show gnxi state detail ```
-
 ![](gnxi_configured_arrow.png)
+
+```C9300#show gnxi state detail ```
 
 
 # Configuring Telemetry Subscriptions on the Catalyst 9300
 
 The next step is to configure the telemetry subscriptions. This consists of several configuration items:
 
+<<<<<<< HEAD
 1-Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
+=======
+# Telnet back into the Catalyst 9300
+`auto@pod#-xelab:~$ telnet c9300`
 
-2-Configure the type of encoding, in our case is: ‘encode-kvgpb’
+Username: ```admin```
 
-3-YANG Push can be used to monitor configuration or operational datastore changes. We will use: ‘ stream yang-push’ 
+Password: ```Cisco123```
 
-4-Periodicity. Specify how frequently you want to send the traffic (in milliseconds) and the receiver of the traffic.
 
-5-Include the receiver of the traffic, in this case it is the switch: 10.1.1.5. 
+# Configuring Telemetry Subscriptions on the Catalyst 9300
+1. Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
+1. Configure the type of encoding, in our case is: ‘encode-kvgpb’
+>>>>>>> 30bdb6516e65f84a5a946975449d2352b6ab3f18
+
+1. YANG Push can be used to monitor configuration or operational datastore changes. We will use: ‘ stream yang-push’ 
+
+1. Periodicity. Specify how frequently you want to send the traffic (in milliseconds) and the receiver of the traffic.
+
+1. Include the receiver of the traffic, in this case it is the switch: 10.1.1.5. 
+![](mdt_subscriptions.png)
+
+1. Copy & paste or enter the following commands, exactly as they appear on the Catalyst 9300:
+
+<<<<<<< HEAD
 6-Copy-paste or enter the following commands, exactly as they appear on the Catalyst 9300:
+=======
+>>>>>>> 30bdb6516e65f84a5a946975449d2352b6ab3f18
 
 ```
 configure terminal
@@ -189,7 +195,7 @@ stream yang-push
 update-policy periodic 6000
 receiver ip address 10.1.1.3 57500 protocol grpc-tcp
 ```
- ![](mdt_subscriptions.png)
+
  
  
  
@@ -201,14 +207,17 @@ Grafana connects with every possible data source or databases such as Graphite, 
 
 Grafana being an open source solution also enables us to write plugins from scratch for integration with several different data sources.
 
+<<<<<<< HEAD
 ## Open the Grafana dashboard in Firefox 
 ```Open http://localhost:13000/```
+=======
+## Open the following browser URL to access the Grafana dashboard 
+```http://localhost:13000/```
+>>>>>>> 30bdb6516e65f84a5a946975449d2352b6ab3f18
 
-```
 Username: admin
 
 Password: Cisco123
-```
 
 ![](grafana_browser.png)
 
