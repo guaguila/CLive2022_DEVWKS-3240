@@ -126,6 +126,8 @@ Verify the certificates are in use now.
 ```C9300#show gnxi state detail ```
 
 
+
+
 # Configuring Telemetry Subscriptions on the Catalyst 9300
 
 The next step is to configure the telemetry subscriptions. This consists of several configuration items:
