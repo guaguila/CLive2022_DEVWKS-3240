@@ -130,9 +130,6 @@ Verify the certificates are in use now.
 
 The next step is to configure the telemetry subscriptions. This consists of several configuration items:
 
-<<<<<<< HEAD
-1-Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
-=======
 # Telnet back into the Catalyst 9300
 `auto@pod#-xelab:~$ telnet c9300`
 
@@ -145,7 +142,6 @@ Password: ```Cisco123```
 1. Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
 1. Configure the type of encoding, in our case is: ‘encode-kvgpb’
->>>>>>> 30bdb6516e65f84a5a946975449d2352b6ab3f18
 
 1. YANG Push can be used to monitor configuration or operational datastore changes. We will use: ‘ stream yang-push’ 
 
@@ -156,10 +152,6 @@ Password: ```Cisco123```
 
 1. Copy & paste or enter the following commands, exactly as they appear on the Catalyst 9300:
 
-<<<<<<< HEAD
-6-Copy-paste or enter the following commands, exactly as they appear on the Catalyst 9300:
-=======
->>>>>>> 30bdb6516e65f84a5a946975449d2352b6ab3f18
 
 ```
 configure terminal
