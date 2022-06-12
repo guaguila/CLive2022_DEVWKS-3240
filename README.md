@@ -197,8 +197,8 @@ Grafana connects with every possible data source or databases such as Graphite, 
 
 Grafana being an open source solution also enables us to write plugins from scratch for integration with several different data sources.
 
-## Open the browser to access the Grafana dashboard 
-```Open http://localhost:13000/```
+## Open the following browser URL to access the Grafana dashboard 
+```http://localhost:13000/```
 
 Username: admin
 
