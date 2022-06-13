@@ -132,7 +132,7 @@ Verify the certificates are in use now.
 
 The next step is to configure the telemetry subscriptions. This consists of several configuration items:
 
-1. Every process that you need to monitor from the device requires a subscription. We will create for subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
+1. Every process that you need to monitor from the device requires a subscription. We will create four subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
 1. Configure the type of encoding, in our case is: ‘encode-kvgpb’
 
