@@ -141,10 +141,9 @@ The next step is to configure the telemetry subscriptions. This consists of seve
 1. Periodicity. Tells how frequently we want to send the traffic (in milliseconds) to the receiver of the traffic.
 
 1. Specify the receiver of the traffic, in this case is the switch: 10.1.1.5. 
-![](mdt_subscriptions.png)
 
 1. Copy & paste or enter the following commands, exactly as they appear on the Catalyst 9300:
-
+![](mdt_subscriptions.png)
 
 ```
 configure terminal
