@@ -62,7 +62,7 @@ The console will look similar to the screenshot below:
 
 `telnet c9300`
 
-Then login with credentials admin / Cisco123
+Use the following credentials: admin / Cisco123
 
 
 
