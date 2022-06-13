@@ -50,7 +50,7 @@ Only the Root certificate and private key are required for this client. The clie
 
 The client certificates can also be provided to establish the connection to the target and will be used instead.
 
-For the sake of brevity, we will just take care of the aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
+For the sake of brevity, we will just take care of the following aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
 
 
 ## Telnet into the Catalyst 9300
