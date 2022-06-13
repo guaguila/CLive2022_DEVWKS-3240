@@ -56,7 +56,7 @@ For the sake of brevity, we will just take care of the following aspects of this
 ## Telnet into the Catalyst 9300
 From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use the IP address but an actual name. 
 
-The console will look similar to the screenshot once the above and below 
+The console will look similar to the screenshot below:
 
 ![](telnet-gnmi-show.png)
 
