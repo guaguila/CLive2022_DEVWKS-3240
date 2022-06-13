@@ -134,13 +134,13 @@ The next step is to configure the telemetry subscriptions. This consists of seve
 
 1. Every process that you need to monitor from the device requires a subscription. We will create four subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
-1. Configure the type of encoding, in our case is: ‘encode-kvgpb’
+1. In our case, the type of encoding is: ‘encode-kvgpb’
 
 1. YANG Push can be used to monitor configuration or operational datastore changes. We will use: ‘ stream yang-push’ 
 
-1. Periodicity. Specify how frequently you want to send the traffic (in milliseconds) and the receiver of the traffic.
+1. Periodicity. Tells how frequently we want to send the traffic (in milliseconds) to the receiver of the traffic.
 
-1. Include the receiver of the traffic, in this case it is the switch: 10.1.1.5. 
+1. Specify the receiver of the traffic, in this case is the switch: 10.1.1.5. 
 ![](mdt_subscriptions.png)
 
 1. Copy & paste or enter the following commands, exactly as they appear on the Catalyst 9300:
