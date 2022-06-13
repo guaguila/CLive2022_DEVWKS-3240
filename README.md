@@ -187,7 +187,7 @@ receiver ip address 10.1.1.3 57500 protocol grpc-tcp
 
 Grafana is an open source solution for running data analytics, it pulls up selective metrics out of the huge amount of data that we are ingesting daily from our devices and apps with the help of customizable dashboards.
 
-Grafana connects with every possible data source or databases such as Graphite, Prometheus, Influx DB, ElasticSearch, MySQL, PostgreSQL etc. In this case we will extract the information the subscriptions that were created on the switch. This data has been  sent from the switch to Influx DB. Now we will display that into Grafana dashboards.
+Grafana connects with every possible data source or databases such as Graphite, Prometheus, Influx DB, ElasticSearch, MySQL, PostgreSQL etc. In this case we will extract the information from the subscriptions that were created before on the switch. This data has been sent from the switch to Influx DB. Now, we will pass this data into Grafana dashboards for visualization.
 
 Grafana being an open source solution also enables us to write plugins from scratch for integration with several different data sources.
 
