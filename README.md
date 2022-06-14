@@ -30,12 +30,12 @@ The client certificates can also be provided to establish the connection to the 
 For the sake of brevity, we will just take care of the following aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
 
 ## MDT Subscription Configuration
-![](IOSXE_SUBS.png)
+![](IOSXE_sub_config.png)
 
 
 # Accessing the lab environment 
 
-1. Identify your pod#
+1. Identify your pod#.
  
 2. Open two terminal windows and SSH to both. One window will be used to configure the VM. The second window is for telnet access into the C9300.
 
