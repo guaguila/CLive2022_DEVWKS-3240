@@ -212,9 +212,9 @@ Cisco IOS XE is fully managed via YANG data models and the Model Driven Telemetr
 
 
 ## Follow up on MDT
-Please be sure to complete the sessio survey in the Cisco Events App
+Please make sure to complete the session survey in the Cisco Events App.
 
-Additional feedback is also being collected in the SmartSheet form during and after the event - please lease a comment on this lab at
+Additional feedback is also being collected in the SmartSheet form during and after the event - please leave a comment on this lab at:
 
 https://app.smartsheet.com/b/form/134240eac2d84a57acd4efc24fd8f3d0
 
