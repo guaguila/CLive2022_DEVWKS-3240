@@ -7,8 +7,31 @@ This lab focus on the configuration of a Catalyst 9300 switch and and a Ubuntu V
 You will access the lab via SSH. Please find below the actual lab environment and the instructions to continue. 
 
 
-# Lab environment
+# Lab Environment
 ![](lab_env.png)
+
+
+# Lab Configuration Scope
+
+## gNOI Certificate Management Client
+
+We are going to shield the switch to VM communication using certificates. A simple shell binary that performs Certificate Management client operations against a gNOI Target complete the operation.
+
+### Certificates
+
+Only the Root certificate and private key are required for this client. The client will:
+
+* generate a client certificate for establishing the connection to the Target
+
+* sign target signing requests for installing or rotating certificates on the Target
+
+The client certificates can also be provided to establish the connection to the target and will be used instead.
+
+For the sake of brevity, we will just take care of the following aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
+
+## MDT Subscriptions
+![](IOSXE_LF.png)
+
 
 # Accessing the lab environment 
 
@@ -27,37 +50,18 @@ You will access the lab via SSH. Please find below the actual lab environment an
 Type, `yes` to continue 
 
 After you approve the entry you should be able to see the following prompt:
-
 ![](pod_login.png)
 
 
 
 4. Telnet into the Catalyst 9300 into the second window that you opened before. Use the following credentials: admin / Cisco123
-
 ![](telnet-gnmi-show.png)
 
-This is how you should see them once you access both, the VM and the c9300:
+5. Once you finished accesing via SSH and telnet into the VM and the switch respectively, this is how you should see them:
 ![](vm_c9300_terminals.png)
 
 
 # Enhanced security via certificates (gNOI) for Model-Driven Telemetry
-
-## gNOI Certificate Management Client
-
-We are going to shield the switch to VM communication using certificates. A simple shell binary that performs Certificate Management client operations against a gNOI Target complete the operation.
-
-## Certificates
-
-Only the Root certificate and private key are required for this client. The client will:
-
-* generate a client certificate for establishing the connection to the Target
-
-* sign target signing requests for installing or rotating certificates on the Target
-
-The client certificates can also be provided to establish the connection to the target and will be used instead.
-
-For the sake of brevity, we will just take care of the following aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
-
 
 ## GNXI configuration on the Catalyst 9300
 
