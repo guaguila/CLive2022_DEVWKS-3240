@@ -17,26 +17,11 @@ To access the lab, you will need to SSH to the VM specific host. From the VM hos
 3-Copy/Paste the below line into each terminal sessions:
 Note: Use your pod number instead of the ## symbol for the SSH command
 
-![](vm_c9300_terminals.png)
-
-```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
-
-
-----
-
-Identify your pod# and log into your respective pod# using SSH Terminal from the bottom left corner.
-
-Note: Use your pod number instead of the ## symbol for the SSH command
-
-We recommend to open two terminal windows and login to both at the same time. One will be used for the VM while the other is dedicated for use on the C9300 switch.
-
-Copy/Paste the below line into the terminal. 
-
-![](vm_c9300_terminals.png)
-
-```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
-
 Password: Use the password given to you by the facilitator
+
+![](vm_c9300_terminals.png)
+
+```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
 Once you logged into the VM, the first time you login, you'll see this question:
 
