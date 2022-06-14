@@ -64,7 +64,7 @@ After you approve the entry you should be able to see the following prompt:
 
 ## GNXI configuration on the Catalyst 9300
 
-The output will look similar to the below screenshot:
+We will start by configuring GNXI on the Catalyst 9300 switch and then check its operational:
 
 
 ![](gnxi_details.png)
@@ -82,15 +82,15 @@ show gnxi state detail
 
 
 
-You have now configured gNMI and verified that it is operational. Turn on the terminal monitor now so that events that happen next can be seen in real time on the C9300 terminal window. Enter the command to enable the terminal monitor: ***term mon***
+You have now configured gNMI and verified that it is operational. Turn on the terminal monitor now so that events that happen next can be seen in real time on the C9300 terminal window. Enter the following command to enable terminal monitor: ***term mon***
 
-Next you will switch to the Linux VM terminal to install the certificates onto the C9300 from the VM.
+Now lets turn to the Linux VM terminal to install the certificates onto the C9300 from the VM.
 
 ## Certificate provisioning on the Virtual Machine
 
-Use the 2nd terminal window to perform the folowing tasks in the linux terminal
+Use the 2nd terminal window to perform the following tasks in the linux terminal.
 
-Go into directory ***/home/auto/gnmi_ssl/certs*** then run the gnoi_cert command to install the certificate
+Go into directory ***/home/auto/gnmi_ssl/certs*** then run the gnoi_cert command to install the certificate.
 
 Copy and paste the following command exactly as it is. Make sure you are on the correct directory before.
 
@@ -101,15 +101,15 @@ cd gnmi_ssl/certs/
 
 ![](cert_dir.png)
 
-This is going to install the certificate on the switch with the name "mdt_cert" that was specified (certificate for model driven telemetry)
+This is going to install the certificate on the switch fromthe VM with the name "mdt_cert" that was specified (certificate for model driven telemetry)
 
 
-## Verify Certificates were provisioned and installed on the Catalyst 9300
+Verify the certificates were provisioned and installed on the Catalyst 9300
 
 One way to confirm the certificates installation is to examine the log file by running ***show log*** however since the terminal monitor is already enabled the relevant log messages are already displayed on the screen.
 
 ![](gnxi_log.png)
-
+Use can filter the log to catch the specific message that we are looking for with the following command:
 ```C9300#show log | i PKI```
 
 When gNOI cert.proto install operation is succesfull there will be a log message similar to “PKI-6-TRUSTPOINT_CREATE” which is seen on the C9300 terminal window.
@@ -121,12 +121,13 @@ Verify the certificates are in use now.
 
 ```C9300#show gnxi state detail ```
 
+Note the 'Secure trustpoint' change from "Self-Signed" to the actual certificate name (mdt_cert) that was provisioned from the VM. 
 
 
 
 # Configuring Telemetry Subscriptions on the Catalyst 9300
 
-The next step is to configure the telemetry subscriptions. This consists of several configuration items:
+The next step is configure the telemetry subscriptions. This consists of several configuration steps:
 
 1. Every process that you need to monitor from the device requires a subscription. We will create four subscriptions to monitor the following aspects: CPU, Power, Memory and Temperature.
 
