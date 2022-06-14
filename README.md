@@ -14,7 +14,7 @@ You will access the lab via SSH. Please find below the actual lab environment an
 
 1. Identify your pod#
  
-2. Open two terminal windows and SSH to both. One window will be used to configure the VM. On the second window you will telnet into the C9300.
+2. Open two terminal windows and SSH to both. One window will be used to configure the VM. The second window is for telnet access into the C9300.
 
 3. To SSH into the devices, copy/paste the below line into each of the terminal sessions:
 
@@ -36,8 +36,7 @@ After you approve the entry you should be able to see the following prompt:
 
 
 
-4. Telnet access into the Catalyst 9300
-On the second SSH window that you opened above telnet to the c9300. Use the following credentials to Telnet into the C9300: admin / Cisco123
+4. Telnet into the Catalyst 9300 into the second window that you opened before. Use the following credentials to Telnet into the switch: admin / Cisco123
 
 ![](telnet-gnmi-show.png)
 
