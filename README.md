@@ -20,8 +20,6 @@ Note: Use your pod number instead of the ## symbol for the SSH command
 
 Password: Use the password given to you by the facilitator
 
-![](vm_c9300_terminals.png)
-
 ```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
 Once you logged into the VM, the first time you login, you'll see this question:
@@ -39,6 +37,9 @@ After you approve the entry you should be able to see the following prompt:
 ## Telnet access into the Catalyst 9300
 On the second SSH window that you opened above telnet to the c9300. Use the following credentials to Telnet into the C9300: admin / Cisco123
 ![](telnet-gnmi-show.png)
+
+This is how you should see them once you access both, the VM and the c9300:
+![](vm_c9300_terminals.png)
 
 
 # Enhanced security via certificates (gNOI) for Model-Driven Telemetry
