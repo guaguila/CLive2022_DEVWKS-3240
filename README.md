@@ -16,11 +16,9 @@ You will access the lab via SSH. Please find below the actual lab environment an
  
 2. Open two terminal windows and SSH to both. One window will be used to configure the VM. The second window is for telnet access into the C9300.
 
-3. To SSH into the devices, copy/paste the below line into each of the terminal sessions:
+3. To SSH into the devices, copy/paste the below line into each of the terminal sessions. Replace the ## symbol on the SSH command with your pod number.
 
-Note: Replace the ## symbol on the SSH command with your pod number.
-
-Password: Use the password given to you by the facilitator.
+    Password: Use the password given to you by the facilitator.
 
 ```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
@@ -63,7 +61,7 @@ The client certificates can also be provided to establish the connection to the 
 For the sake of brevity, we will just take care of the following aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
 
 
-## 1-GNXI configuration on the Catalyst 9300
+## GNXI configuration on the Catalyst 9300
 
 The output will look similar to the below screenshot:
 
@@ -87,7 +85,7 @@ You have now configured gNMI and verified that it is operational. Turn on the te
 
 Next you will switch to the Linux VM terminal to install the certificates onto the C9300 from the VM.
 
-## 2-Provision the certificates on the Virtual Machine
+## Certificate provisioning on the Virtual Machine
 
 Use the 2nd terminal window to perform the folowing tasks in the linux terminal
 
