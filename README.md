@@ -32,7 +32,6 @@ For the sake of brevity, we will just take care of the following aspects of this
 ## MDT Subscription Configuration
 ![](IOSXE_sub_config.png)
 
-
 # Accessing the lab environment 
 
 1. Identify your pod#.
