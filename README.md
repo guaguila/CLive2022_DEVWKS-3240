@@ -10,11 +10,12 @@ To access the lab, you will need to SSH to the VM specific host. From the VM hos
 
 # Accessing the lab environment 
 
-1-Identify your pod#
+1. Identify your pod#
  
-2-Open two terminal windows: one will be used to configure the VM while the other is to telnet into the C9300.
+2. Open two terminal windows: one will be used to configure the VM while the other is to telnet into the C9300.
 
-3-Copy/Paste the below line into each terminal sessions:
+3. Copy/Paste the below line into each terminal sessions:
+
 Note: Use your pod number instead of the ## symbol for the SSH command
 
 Password: Use the password given to you by the facilitator
@@ -36,7 +37,7 @@ After you approve the entry you should be able to see the following prompt:
 
 
 ## Telnet access into the Catalyst 9300
-Use the following credentials to Telnet into the C9300: admin / Cisco123
+On the second SSH window that you opened above telnet to the c9300. Use the following credentials to Telnet into the C9300: admin / Cisco123
 
 # Enhanced security via certificates (gNOI) for Model-Driven Telemetry
 
