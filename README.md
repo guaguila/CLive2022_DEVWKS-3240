@@ -2,7 +2,9 @@
 ## Version 17.8
 
 # Lab Introduction
-To access the lab, you will need to SSH to the VM specific host. From the VM host you will have access to the switch and the remaining software dependencies for the lab. Please find below the actual lab environment and instructions. 
+This lab focus on the configuration of a Catalyst 9300 switch and and a Ubuntu VM machine that has the necessary software dependencies to reproduce the MDT contents reviewed during the presentation. 
+
+You will access the lab via SSH. Please find below the actual lab environment and the instructions to continue. 
 
 
 # Lab environment
@@ -12,17 +14,17 @@ To access the lab, you will need to SSH to the VM specific host. From the VM hos
 
 1. Identify your pod#
  
-2. Open two terminal windows: one will be used to configure the VM while the other is to telnet into the C9300.
+2. Open two terminal windows and SSH to both. One window will be used to configure the VM. On the second window you will telnet into the C9300.
 
-3. Copy/Paste the below line into each terminal sessions:
+3. To SSH into the devices, copy/paste the below line into each of the terminal sessions:
 
-Note: Use your pod number instead of the ## symbol for the SSH command
+Note: Replace the ## symbol on the SSH command with your pod number.
 
-Password: Use the password given to you by the facilitator
+Password: Use the password given to you by the facilitator.
 
 ```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
-Once you logged into the VM, the first time you login, you'll see this question:
+    Once you logged into the VM, the first time you login, you'll see this question:
 
 `Are you sure you want to continue connecting (yes/no/[fingerprint])?` 
 
