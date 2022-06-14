@@ -29,6 +29,8 @@ Type, `yes` to continue
 
 After you approve the entry you should be able to see the following prompt:
 
+Use the following credentials to Telnet into the C9300: admin / Cisco123
+
 ![](pod_login.png)
 
 
