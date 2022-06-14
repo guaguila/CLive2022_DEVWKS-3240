@@ -30,7 +30,7 @@ The client certificates can also be provided to establish the connection to the 
 For the sake of brevity, we will just take care of the following aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
 
 ## MDT Subscription Configuration
-![](IOSXE_LF.png)
+![](IOSXE_SUBS.png)
 
 
 # Accessing the lab environment 
