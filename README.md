@@ -29,9 +29,12 @@ Type, `yes` to continue
 
 After you approve the entry you should be able to see the following prompt:
 
+![](pod_login.png)
+
+## Telnet access into the Catalyst 9300
 Use the following credentials to Telnet into the C9300: admin / Cisco123
 
-![](pod_login.png)
+
 
 
 
