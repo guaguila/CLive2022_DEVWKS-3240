@@ -55,19 +55,6 @@ The client certificates can also be provided to establish the connection to the 
 For the sake of brevity, we will just take care of the following aspects of this configuration: 1) the GNXI switch configuration and 2) the certificate provision on the VM. 
 
 
-## Telnet into the Catalyst 9300
-From the VM prompt, enter the following commands to Telnet into the Catalyst 9300. We have DNS naming configured so we wont use the IP address but an actual name. 
-
-The console will look similar to the screenshot below:
-
-![](telnet-gnmi-show.png)
-
-`telnet c9300`
-
-Use the following credentials: admin / Cisco123
-
-
-
 ## 1-GNXI configuration on the Catalyst 9300
 
 The output will look similar to the below screenshot:
