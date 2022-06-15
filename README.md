@@ -2,7 +2,7 @@
 ## Version 17.8
 
 # Lab Introduction
-This lab focus on the configuration of a Catalyst 9300 switch and and a Ubuntu VM machine that has the necessary software dependencies to reproduce the MDT contents reviewed during the presentation. 
+This lab focus on the configuration of a Catalyst 9300 switch and a Ubuntu VM machine that has the necessary software dependencies to reproduce the MDT contents reviewed during the presentation. 
 
 You will access the lab via SSH. Please find below the actual lab environment and the instructions to continue. 
 
