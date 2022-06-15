@@ -50,7 +50,7 @@ Type, `yes` to continue
 
 After you approve the entry you should be able to see the following prompt:
 
-    ![](pod_login.png)
+![](pod_login.png)
 
 
 
