@@ -4,6 +4,17 @@
 # Lab Introduction
 To access the lab, you will need to SSH to the VM specific host. From the VM host you will have access to the switch and the remaining software dependencies for the lab. Please find below the actual lab environment and instructions. 
 
+# Lab Overview
+
+This lab consists of several main sections that should be completed in order:
+
+1. Enable/Verify gNXI (gNMI)
+1. Provision certificate with gNOI
+1. Validate certificate installed
+1. Enable Telemetry subscription
+1. Review Grafana Dashboard
+
+
 
 # Lab environment
 ![](lab_env.png)
