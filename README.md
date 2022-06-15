@@ -49,10 +49,7 @@ Once logged into the VM, the first time you login, you'll see this question:
 Type, `yes` to continue 
 
 After you approve the entry you should be able to see the following prompt:
-
 ![](pod_login.png)
-
-
 
 4. Telnet into the Catalyst 9300 on the second window that you opened before. Use the following credentials: admin / Cisco123
 
