@@ -54,7 +54,7 @@ After you approve the entry you should be able to see the following prompt:
 
 
 
-4. Telnet into the Catalyst 9300 into the second window that you opened before. Use the following credentials: admin / Cisco123
+4. Telnet into the Catalyst 9300 on the second window that you opened before. Use the following credentials: admin / Cisco123
 
     ![](telnet-gnmi-show.png)
 
