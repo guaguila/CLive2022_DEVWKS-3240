@@ -121,7 +121,7 @@ Verify the certificates are in use now on the switch.
 
 ```C9300#show gnxi state detail ```
 
-Note the 'Secure trustpoint' change from "Self-Signed" to the actual certificate name (mdt_cert) that was provisioned from the VM. 
+Note the 'Secure trustpoint' changed from the "Self-Signed" state thad had before, to the actual certificate name that was provisioned from the VM (mdt_cert). 
 
 
 
