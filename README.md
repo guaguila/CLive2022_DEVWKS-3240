@@ -112,7 +112,7 @@ Verify the certificates were provisioned and installed on the Catalyst 9300. One
 A filter on the log can be applied to catch the specific messages that we are looking for with the following command:
 ```C9300#show log | i PKI```
 
-When gNOI cert.proto install operation is succesfull there will be a log message similar to “PKI-6-TRUSTPOINT_CREATE” which is seen on the C9300 terminal window.
+When gNOI cert.proto install operation finished a log message similar to “PKI-6-TRUSTPOINT_CREATE” will appear on the C9300 terminal window.
 
 
 Verify the certificates are in use now.
