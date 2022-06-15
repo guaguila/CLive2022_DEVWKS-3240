@@ -66,7 +66,7 @@ After you approve the entry you should be able to see the following prompt:
 
 ## GNXI configuration on the Catalyst 9300
 
-We will start by configuring GNXI on the Catalyst 9300 switch and then check its operational:
+We will start by configuring GNXI on the Catalyst 9300 switch and then check it is operational:
 
 
 ![](gnxi_details.png)
@@ -103,15 +103,13 @@ cd gnmi_ssl/certs/
 
 ![](cert_dir.png)
 
-This is going to install the certificate on the switch fromthe VM with the name "mdt_cert" that was specified (certificate for model driven telemetry)
+This is going to install the certificate on the switch from the VM with the name "mdt_cert" that was specified before(certificate for model driven telemetry)
 
 
-Verify the certificates were provisioned and installed on the Catalyst 9300
-
-One way to confirm the certificates installation is to examine the log file by running ***show log*** however since the terminal monitor is already enabled the relevant log messages are already displayed on the screen.
+Verify the certificates were provisioned and installed on the Catalyst 9300. One way to confirm the certificates installation is examine the log file by running ***show log*** however since the terminal monitor is already enabled the relevant log messages are already displayed on the screen.
 
 ![](gnxi_log.png)
-Use can filter the log to catch the specific message that we are looking for with the following command:
+A filter on the log can be applied to catch the specific messages that we are looking for with the following command:
 ```C9300#show log | i PKI```
 
 When gNOI cert.proto install operation is succesfull there will be a log message similar to “PKI-6-TRUSTPOINT_CREATE” which is seen on the C9300 terminal window.
