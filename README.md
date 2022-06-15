@@ -42,7 +42,7 @@ For the sake of brevity, we will just take care of the following aspects of this
 
 ```ssh -p 3389 -L 18480:localhost:8480 -L 13000:localhost:3000 auto@pod##-xelab.cisco.com```
 
-    Once you logged into the VM, the first time you login, you'll see this question:
+Once logged into the VM, the first time you login, you'll see this question:
 
 `Are you sure you want to continue connecting (yes/no/[fingerprint])?` 
 
