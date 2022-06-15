@@ -115,7 +115,7 @@ A filter on the log can be applied to catch the specific messages that we are lo
 When gNOI cert.proto install operation finished a log message similar to “PKI-6-TRUSTPOINT_CREATE” will appear on the C9300 terminal window.
 
 
-Verify the certificates are in use now.
+Verify the certificates are in use now on the switch.
 
 ![](gnxi_configured_arrow.png)
 
