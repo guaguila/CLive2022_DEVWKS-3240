@@ -44,11 +44,7 @@ After you approve the entry you should be able to see the following prompt:
 You will access the lab via SSH. Please find below the actual lab environment and the instructions to continue. 
 
 
-# Lab Environment
-![](lab_env.png)
-
-
-# Lab Configuration Scope
+# Lab Configuration
 
 ## gNOI Certificate Management Client
 
